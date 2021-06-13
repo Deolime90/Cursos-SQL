@@ -13,7 +13,7 @@ alter table pessoas
 add column profissao varchar (10) after nome;
 
 alter table pessoas
-modify column profissao varchar(20) not null default '';
+modify column profissao varchar(20) not null default ''; #Importante
 #Vai aparecer erro 1138, pois a coluna já é null, é necessário colocar algum valor no add
 
 alter table pessoas
@@ -27,3 +27,7 @@ rename to gafanhotos;
 
 desc	gafanhotos;
  select * from pessoas;
+
+ 
+ alter table gafanhotos
+ change column profissao profissao varchar(30) not null default ''; #importante
