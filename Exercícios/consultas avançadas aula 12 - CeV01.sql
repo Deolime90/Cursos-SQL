@@ -6,7 +6,8 @@ order by nome;
 # 2 Criar uma lista com os dados de todos que nasceram entre 1/01/2000 e 31/12/2015
 desc gafanhotos;
 select * from gafanhotos
-where nascimento > '2000-01-01' and nascimento < '2015-12-01'
+#where nascimento > '2000-01-01' and nascimento < '2015-12-01' #outra forma
+where nascimento between '2000-01-01' and '2015-12-01'
 order by nascimento asc;
 
 # 3 Uma lista com todos os homens que trabalham como programadores
@@ -36,7 +37,7 @@ select avg(peso) from gafanhotos;
 # 8 Qual o menor peso entre as mulheres que nasceram fora do Brasil entre 01/01/90 e 31/12/2000
 select nome, min(peso) from gafanhotos
 where sexo = 'F' and nacionalidade <> 'Brasil' 
-and nascimento > '1990-01-01' and nascimento < '2000-12-31';
+and nascimento between '1990-01-01' and '2000-12-31';
 
 # 9 Quantas mulheres têm mais de 1,90 de altura?
 select count(*) from gafanhotos
